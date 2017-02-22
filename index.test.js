@@ -6,6 +6,24 @@ var stoneHelper = require('./stoneHelper');
 var config = require('./config');
 var delay = config.interval; //2000 == 2 secondy
 
+var actuals = {
+	connections: [{
+        virtualAddress: "10.8.0.10",
+        CN: "ios",
+        realAddress: "91.112.9.6:52150",
+        LastRef: "Tue Feb 21 16:24:59 2017"
+    },
+    {
+        virtualAddress: "10.8.0.6",
+        CN: "client1",
+        realAddress: "91.112.9.6:64962",
+        LastRef: "Tue Feb 21 16:25:07 2017"
+    }]
+};
+
+var http = require("./website");
+http.init(actuals);
+
 async.forever(
     function (next) {
         vpnChecker.checkVpn(function (err, activeVpnConnection) {

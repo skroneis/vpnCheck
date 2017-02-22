@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" ng-app="main">
+
+<head>
+    <meta charset="utf-8" />
+    <title>VNP-Checker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/spacelab/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/custom.css" />
+    <!--https://www.bootstrapcdn.com/-->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+        crossorigin="anonymous">
+        <!--http://iconifier.net-->
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+        <!--<link rel="apple-touch-icon" href="./icons/measure-icon.png" />
+    <link rel="apple-touch-icon" sizes="57x57" href="./icons/measure-57x57.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="./icons/measure-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="./icons/measure-76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="./icons/measure-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="./icons/measure-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="./icons/measure-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="./icons/measure-152x152.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./icons/measure-180x180.png" />-->
+</head>
+
+<body>
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <!--<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>-->
+                <a class="navbar-brand" href="./index.html"><i class="fa fa-rebel" aria-hidden="true"></i>&nbsp;VNP-Checker</a>
+            </div>
+            <!--<div class="navbar-collapse collapse" id="navbar-main">
+                <ul class="nav navbar-nav navbar-right">
+                        <li><a href="http://builtwithbootstrap.com/" target="_blank">Built With Bootstrap&nbsp;<i class="fa fa-external-link" aria-hidden="true"></i></a></li>
+                        <li><a href="https://wrapbootstrap.com/?ref=bsw" target="_blank">WrapBootstrap&nbsp;<i class="fa fa-external-link" aria-hidden="true"></i></a></li>
+                    </ul>
+            </div>-->
+        </div>
+    </div>
+    <div ng-controller="stoneController" ng-init="init()" ng-cloak>
+        <div class="container">
+            <div class="page-header" id="banner">
+                <div class="row">
+                    <!--<div class="col-lg-8 col-md-7 col-sm-6">
+                        <h1>todo...</h1>
+                        <p class="lead">todo...</p>
+                    </div>-->
+                </div>
+            </div>
+        </div>
+        <!--<pre>{{isLoading}}</pre>-->
+        <!--<pre>{{infos | json}}</pre>-->
+        <div class="container">
+            <!--<div class="well bs-component" ng-show="isLoading">
+                <span><i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i>&nbsp;&nbsp;Bitte warten...</span>
+            </div>-->
+            <!--<div class="well bs-component" ng-show="isLoading">
+                    <div class="row">
+                        <div class="col-lg-7">
+                            <span>{{infos.Temp}}</span>
+                        </div>
+                    </div>
+                </div>-->
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><i class="fa fa-line-chart" aria-hidden="true"></i>&nbsp;VPN-Connections</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="row" ng-repeat="c in data.connections">
+                        <div class="col-sm-2">
+                            <span><i class="fa fa-link" aria-hidden="true"></i>&nbsp;{{c.virtualAddress}}</span>
+                        </div>
+                        <div class="col-sm-2">
+                            <span>{{c.CN}}</span>
+                        </div>
+                        <div class="col-sm-2">
+                            <span>{{c.realAddress}}</span>
+                        </div>
+                         <div class="col-sm-2">
+                            <span>{{c.LastRef}}</span>
+                        </div>
+                        <!--TODO: table-->                        
+                    </div>
+
+                </div>
+            </div>
+            <!--<ul class="nav nav-pills">
+                <li><a href="./api/test" target="_blank"><i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp;api<span class="badge"></span></a> </li>
+                <li><a href="./raw.html" target="_blank"><i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp;raw<span class="badge"></span></a> </li>
+                <li><a href="./api/reset" target="_blank"><i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp;reset<span class="badge"></span></a> </li>
+                <div ng-show="isLoading" class="pull-right spinner"><img src="./images/spinner.gif" alt="loading"></div>
+            </ul>-->
+        </div>
+    </div>
+    <!--footer-->
+    <hr />
+    <footer>
+        <div class="container">
+            <p class="pull-left">
+                &copy;&nbsp;<span ng-controller='stoneController'>{{ getDate() |  date:"yyyy" }}</span>&nbsp;Stefan&nbsp;Kroneis
+                &nbsp;
+                <i class="fa fa-calendar-o" aria-hidden="true" style="font-size:12px;"></i>&nbsp;
+                <span class="clock" ng-controller='TimeCtrl' style="float: right;" ng-cloak>{{ clock | date:'EEEE, dd.MM.yyyy HH:mm:ss'}}</span>
+            </p>
+            <!--<div id="heartbeat" Xhidden="hidden">
+                            <img height="16" src="./images/loading.gif" alt="loading">
+                        </div>-->
+            <div class="pull-right">
+                Version: 0.0.1
+            </div>
+        </div>
+    </footer>
+    <!-- JQuery -->
+    <script src="http://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="
+        crossorigin="anonymous"></script>
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+            <!-- Angular -->
+            <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.min.js"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-touch.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.1.3/ui-bootstrap.min.js"></script>
+            <!--i18n-->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-i18n/1.6.1/angular-locale_de-de.min.js"></script>
+            <!--bootbox.js-->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
+            <script>
+                window.MyApp = {};
+                MyApp.rootPath = '/';
+            </script>
+            <script src="./App/app.js"></script>
+            <script src="./App/stone.js"></script>
+            <!-- Page specific scripts -->
+            <script>
+                //main functions (MVC)
+                $(document).ready(function () {
+                    console.log("document ready...");
+                });
+            </script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+.spinner {
+    margin-right: 15px;
+    margin-top: 10px;
+}
+
+.clock {
+    color: lightGray;
+}
+
+.row-bordered:after {
+  content: "";
+  display: block;
+  border-bottom: 0px solid #ccc;
+  margin: 0 15px;
+  margin-top: 28px;
+}
+
+.panel{
+    margin-bottom: 0;
+}
+
+.in, .danger{
+    color: red;
+}
+
+.out{
+    color: blue;
+}
+
+.page-header {
+    border-bottom: 0;
+}
+
+sub{
+    font-size: xx-small;
+}
