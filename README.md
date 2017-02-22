@@ -13,3 +13,11 @@ sudo rcconf
 sudo service vpncheck start
 sudo service vpncheck stop
 ```
+
+### config-file
+```json
+module.exports={
+    'filename': '/var/log/openvpn-status.log',
+    'interval': '2000'
+};
+```
