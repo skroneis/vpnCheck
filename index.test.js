@@ -1,9 +1,6 @@
 var async = require('async');
 var schedule = require('node-schedule');
 
-var GpioStone = require('./gpio_stone_wp');
-var gpioStone = new GpioStone();
-
 var vpnChecker = require('./vpnChecker');
 var stoneHelper = require('./stoneHelper');
 var config = require('./config');
@@ -15,11 +12,11 @@ async.forever(
             // console.log(activeVpnConnection);
             if (activeVpnConnection) {
                 console.log("VPN connection active! " + stoneHelper.getDate());
-                gpioStone.setOn(gpioStone.LED_GREEN);
+                // gpioStone.setOn(gpioStone.LED_GREEN);
             }
             else {
                 console.log("NO VPN connection active. " + stoneHelper.getDate());
-                gpioStone.setOff(gpioStone.LED_GREEN);
+                // gpioStone.setOff(gpioStone.LED_GREEN);
             }
         });
         //Repeat after the delay
