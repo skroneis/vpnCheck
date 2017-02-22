@@ -1,12 +1,14 @@
 var fs = require('fs');
+var async = require('async');
 var schedule = require('node-schedule');
-
-var GpioStone = require('./gpio_stone_wp');
-var gpioStone = new GpioStone();
-var filename = "/var/log/openvpn-status.log";
+// var GpioStone = require('./gpio_stone_wp');
+// var gpioStone = new GpioStone();
+//var filename = "/var/log/openvpn-status.log";
+var filename = "./samples/1.txt"
+var delay = 2000; //2 seonds
 
 /*****************************************************/
-var test = function (callback) {
+var checkVpn = function (callback) {
     try {
         var data = fs.readFileSync(filename).toString().split("\r");
         var foundIndex = 0;
@@ -29,7 +31,7 @@ var test = function (callback) {
 }
 /*****************************************************/
 
-test(function (err, activeVpnConnection) {
+/*checkVpn(function (err, activeVpnConnection) {
     // console.log(activeVpnConnection);
     if (activeVpnConnection) {
         console.log("YES");
@@ -39,4 +41,26 @@ test(function (err, activeVpnConnection) {
         console.log("NO");
         gpioStone.setOff(gpioStone.LED_GREEN);
     }
-});
+});*/
+async.forever(
+    function (next) {
+        checkVpn(function (err, activeVpnConnection) {
+            // console.log(activeVpnConnection);
+            if (activeVpnConnection) {
+                console.log("YES");
+                // gpioStone.setOn(gpioStone.LED_GREEN);
+            }
+            else {
+                console.log("NO");
+                // gpioStone.setOff(gpioStone.LED_GREEN);
+            }
+        });
+        //Repeat after the delay
+        setTimeout(function () {
+            next();
+        }, delay)
+    },
+    function (err) {
+        console.log(err);
+    }
+);
