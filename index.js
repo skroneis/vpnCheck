@@ -15,15 +15,17 @@ http.init(actuals);
 
 async.forever(
     function (next) {
-        vpnChecker.checkVpn(function (err, activeVpnConnection) {
+        vpnChecker.checkVpn(function (err, activeVpnConnection, lines) {
             // console.log(activeVpnConnection);
             if (activeVpnConnection) {
                 console.log("VPN connection active! " + stoneHelper.getDate());
                 gpioStone.setOn(gpioStone.LED_GREEN);
+                actuals.raw = lines;
             }
             else {
                 console.log("NO VPN connection active. " + stoneHelper.getDate());
                 gpioStone.setOff(gpioStone.LED_GREEN);
+                actuals.raw = [];
             }
         });
         //Repeat after the delay
