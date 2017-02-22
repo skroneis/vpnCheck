@@ -1,7 +1,9 @@
 var fs = require('fs');
+var schedule = require('node-schedule');
+
 var GpioStone = require('./gpio_stone_wp');
 var gpioStone = new GpioStone();
-var filename = "./samples/1.txt";
+var filename = "/var/log/openvpn-status.log";
 
 /*****************************************************/
 var test = function (callback) {

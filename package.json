@@ -17,5 +17,10 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/skroneis/vpnCheck/issues"
+  },
+  "dependencies": {
+    "async": "^2.1.5",
+    "node-schedule": "^1.2.0",
+    "wiring-pi": "^2.2.1"
   }
 }
