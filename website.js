@@ -64,6 +64,14 @@ var apiRoutes = express.Router();
 apiRoutes.get('/getData', function (req, res, next) {
     //if(err) res.send(err);
     try {
+        actuals.connections = [];
+        for (var i = 0, len = actuals.raw.length; i < len; i++) {
+            var values = actuals.raw[i].split(',');
+            if (values.length == 4)
+                actuals.connections.push({ virtualAddress: values[0], CN: values[1], realAddress: values[2], LastRef: new Date(Date.parse(values[3])) });
+        }
+
+        // console.log(actuals.connections[0].virtualAddress)
         res.json(actuals);
     }
     catch (e) {

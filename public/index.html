@@ -69,10 +69,10 @@
                 </div>-->
             <div class="panel panel-primary">
                 <div class="panel-heading">
-                    <h3 class="panel-title"><i class="fa fa-line-chart" aria-hidden="true"></i>&nbsp;VPN-Connections</h3>
+                    <h3 class="panel-title"><i class="fa fa-line-chart" aria-hidden="true"></i>&nbsp;OPENVPN-Connections [ROUTING TABLE]</h3>
                 </div>
                 <div class="panel-body">
-                    <div class="row" ng-repeat="c in data.connections">
+                    <!--<div class="row" ng-repeat="c in data.connections">
                         <div class="col-sm-2">
                             <span><i class="fa fa-link" aria-hidden="true"></i>&nbsp;{{c.virtualAddress}}</span>
                         </div>
@@ -85,8 +85,31 @@
                          <div class="col-sm-2">
                             <span>{{c.LastRef}}</span>
                         </div>
-                        <!--TODO: table-->                        
-                    </div>
+                        <TODO: table/>                        
+                    </div>-->
+                    <table class="table table-sm">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Virtual Address</th>
+                                <th>Common Name</th>
+                                <th>Real Address</th>
+                                <th>Last Ref</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="c in data.connections">
+                                <th scope="row">{{$index+1}}</th>
+                                <td><span><i class="fa fa-link" aria-hidden="true"></i>&nbsp;{{c.virtualAddress}}</span></td>
+                                <td><span>{{c.CN}}</span></td>
+                                <td><span>{{c.realAddress}}</span></td>
+                                <td><span>{{c.LastRef | date:'dd.MM.yyyy HH:mm:ss'}}</span></td>
+                            </tr>
+                            <tr ng-if="data.connections.length == 0">
+                                <td colspan="5"  style="padding-top: 30px;">no vpn connections...</td>
+                            </tr>
+                        </tbody>
+                    </table>
 
                 </div>
             </div>

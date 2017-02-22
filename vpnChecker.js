@@ -13,6 +13,7 @@ function checkVpn(callback) {
 
         var data = fs.readFileSync(filename).toString().split("\n");
         var foundIndex = 0;
+        var lines = [];
         data.forEach(function (line) {
             // line = line.replace("\n", "");
             //console.log(line);
@@ -20,11 +21,12 @@ function checkVpn(callback) {
             if (line.startsWith("10.8.0.")) {
                 // console.log("FOUND!");
                 foundIndex++;
+                lines.push(line);
             }
         });
         // console.log(foundIndex);
         //return result
-        return callback(null, foundIndex > 0);
+        return callback(null, foundIndex > 0, lines);
     }
     catch (e) {
         console.log(e);
