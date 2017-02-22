@@ -15,7 +15,7 @@ sudo service vpncheck stop
 ```
 
 ### config-file
-```json
+```js
 module.exports={
     'filename': '/var/log/openvpn-status.log',
     'interval': 2000
