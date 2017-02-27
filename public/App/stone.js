@@ -1,4 +1,4 @@
-mainModule.controller("stoneController", function ($scope, viewModelHelper, $http) {
+mainModule.controller("stoneController", function ($scope, viewModelHelper, $http, $timeout) {
     $scope.Sepp = "Sepp Forcher";
     $scope.isLoading = false;
 
@@ -14,7 +14,7 @@ mainModule.controller("stoneController", function ($scope, viewModelHelper, $htt
 
     $scope.getValues = function () {
         //alert("getInfos");
-        // console.log("getInfos");
+         console.log("getInfos");
         $scope.isLoading = true;
         //$http.defaults.headers.common["RequestVerificationToken"] = $scope.token;
         // console.log("-----------------------------");
@@ -22,7 +22,10 @@ mainModule.controller("stoneController", function ($scope, viewModelHelper, $htt
         return $http.get(MyApp.rootPath + 'api/getData', null).then(function (response) {
             // console.log(response.data);
             $scope.data = response.data;
-            $scope.isLoading = false;
+            // $scope.isLoading = false;
+            $timeout(function () {
+                $scope.isLoading = false;
+            }, 500);
         },
             function errorCallback(response) {
                 console.log("ERROR");

@@ -14,15 +14,15 @@
         <!--http://iconifier.net-->
 
         <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
-		<link rel="apple-touch-icon" href="./icons/apple-touch-icon.png" />
-		<link rel="apple-touch-icon" sizes="57x57" href="./icons/apple-touch-icon-57x57.png" />
-		<link rel="apple-touch-icon" sizes="72x72" href="./icons/apple-touch-icon-72x72.png" />
-		<link rel="apple-touch-icon" sizes="76x76" href="./icons/apple-touch-icon-76x76.png" />
-		<link rel="apple-touch-icon" sizes="114x114" href="./icons/apple-touch-icon-114x114.png" />
-		<link rel="apple-touch-icon" sizes="120x120" href="./icons/apple-touch-icon-120x120.png" />
-		<link rel="apple-touch-icon" sizes="144x144" href="./icons/apple-touch-icon-144x144.png" />
-		<link rel="apple-touch-icon" sizes="152x152" href="./icons/apple-touch-icon-152x152.png" />
-		<link rel="apple-touch-icon" sizes="180x180" href="./icons/apple-touch-icon-180x180.png" />
+        <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png" />
+        <link rel="apple-touch-icon" sizes="57x57" href="./icons/apple-touch-icon-57x57.png" />
+        <link rel="apple-touch-icon" sizes="72x72" href="./icons/apple-touch-icon-72x72.png" />
+        <link rel="apple-touch-icon" sizes="76x76" href="./icons/apple-touch-icon-76x76.png" />
+        <link rel="apple-touch-icon" sizes="114x114" href="./icons/apple-touch-icon-114x114.png" />
+        <link rel="apple-touch-icon" sizes="120x120" href="./icons/apple-touch-icon-120x120.png" />
+        <link rel="apple-touch-icon" sizes="144x144" href="./icons/apple-touch-icon-144x144.png" />
+        <link rel="apple-touch-icon" sizes="152x152" href="./icons/apple-touch-icon-152x152.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="./icons/apple-touch-icon-180x180.png" />
 </head>
 
 <body>
@@ -70,10 +70,29 @@
                 </div>-->
             <div class="panel panel-primary">
                 <div class="panel-heading">
-                    <h3 class="panel-title"><i class="fa fa-line-chart" aria-hidden="true"></i>&nbsp;OPENVPN-Connections [ROUTING TABLE]</h3>
+                    <h3 class="panel-title" style="min-height: 20px;"><i class="fa fa-line-chart" aria-hidden="true"></i>&nbsp;OPENVPN-Connections [ROUTING TABLE]
+                        <!--<div ng-show="isLoading" class="loadingDiv">
+                            <div class="loadingSpinner"></div>
+                        </div>-->
+                        <!--<div Xng-show="isLoading" class="spinner loadingDiv"><img src="./images/spinner.gif" alt="loading"></div>-->
+                        <div ng-show="isLoading" class="loadingDiv">
+                            <img alt="animated svg spinning loading icon" src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIA0KCWlkPSJzdmctc3Bpbm5lciIgDQoJeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiANCgl4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgDQoJeD0iMHB4IiANCgl5PSIwcHgiDQoJdmlld0JveD0iMCAwIDgwIDgwIiANCgl4bWw6c3BhY2U9InByZXNlcnZlIj4NCg0KCTxwYXRoDQoJCWlkPSJzcGlubmVyIiANCgkJZmlsbD0iI0Q0M0IxMSIgDQoJCWQ9Ik00MCw3MkMyMi40LDcyLDgsNTcuNiw4LDQwQzgsMjIuNCwNCgkJMjIuNCw4LDQwLDhjMTcuNiwwLDMyLDE0LjQsMzIsMzJjMCwxLjEtMC45LDItMiwyDQoJCXMtMi0wLjktMi0yYzAtMTUuNC0xMi42LTI4LTI4LTI4UzEyLDI0LjYsMTIsNDBzMTIuNiwNCgkJMjgsMjgsMjhjMS4xLDAsMiwwLjksMiwyUzQxLjEsNzIsNDAsNzJ6Ig0KCT4NCg0KCQk8YW5pbWF0ZVRyYW5zZm9ybQ0KCQkJYXR0cmlidXRlVHlwZT0ieG1sIg0KCQkJYXR0cmlidXRlTmFtZT0idHJhbnNmb3JtIg0KCQkJdHlwZT0icm90YXRlIg0KCQkJZnJvbT0iMCA0MCA0MCINCgkJCXRvPSIzNjAgNDAgNDAiDQoJCQlkdXI9IjAuNnMiDQoJCQlyZXBlYXRDb3VudD0iaW5kZWZpbml0ZSINCgkJLz4NCgk8L3BhdGg+DQo8L3N2Zz4NCg=="
+                                width="20" height="20">
+                        <!--<svg class="loadingDiv" version="1.1" id="svg-spinner" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                                y="0px" viewBox="0 0 80 80" xml:space="preserve" width="20" height="20">
+                                <path id="spinner" fill="#D43B11" d="M40,72C22.4,72,8,57.6,8,40C8,22.4,
+                                    22.4,8,40,8c17.6,0,32,14.4,32,32c0,1.1-0.9,2-2,2
+                                    s-2-0.9-2-2c0-15.4-12.6-28-28-28S12,24.6,12,40s12.6,
+                                    28,28,28c1.1,0,2,0.9,2,2S41.1,72,40,72z">
+                                    <animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 40 40" to="360 40 40" dur="0.6s" repeatCount="indefinite"/>
+                                </path>
+                            </svg>-->
                 </div>
-                <div class="panel-body">
-                    <!--<div class="row" ng-repeat="c in data.connections">
+
+                </h3>
+            </div>
+            <div class="panel-body">
+                <!--<div class="row" ng-repeat="c in data.connections">
                         <div class="col-sm-2">
                             <span><i class="fa fa-link" aria-hidden="true"></i>&nbsp;{{c.virtualAddress}}</span>
                         </div>
@@ -88,39 +107,39 @@
                         </div>
                         <TODO: table/>                        
                     </div>-->
-                    <table class="table table-sm">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Virtual Address</th>
-                                <th>Common Name</th>
-                                <th>Real Address</th>
-                                <th>Last Ref</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr ng-repeat="c in data.connections">
-                                <th scope="row">{{$index+1}}</th>
-                                <td><span><i class="fa fa-link" aria-hidden="true"></i>&nbsp;{{c.virtualAddress}}</span></td>
-                                <td><span>{{c.CN}}</span></td>
-                                <td><span>{{c.realAddress}}</span></td>
-                                <td><span>{{c.LastRef | date:'dd.MM.yyyy HH:mm:ss'}}</span></td>
-                            </tr>
-                            <tr ng-if="data.connections.length == 0">
-                                <td colspan="5"  style="padding-top: 30px;">no vpn connections...</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <table class="table table-sm">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Virtual Address</th>
+                            <th>Common Name</th>
+                            <th>Real Address</th>
+                            <th>Last Ref</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="c in data.connections">
+                            <th scope="row">{{$index+1}}</th>
+                            <td><span><i class="fa fa-link" aria-hidden="true"></i>&nbsp;{{c.virtualAddress}}</span></td>
+                            <td><span>{{c.CN}}</span></td>
+                            <td><span>{{c.realAddress}}</span></td>
+                            <td><span>{{c.LastRef | date:'dd.MM.yyyy HH:mm:ss'}}</span></td>
+                        </tr>
+                        <tr ng-if="data.connections.length == 0">
+                            <td colspan="5" style="padding-top: 30px;">no vpn connections...</td>
+                        </tr>
+                    </tbody>
+                </table>
 
-                </div>
             </div>
-            <!--<ul class="nav nav-pills">
+        </div>
+        <!--<ul class="nav nav-pills">
                 <li><a href="./api/test" target="_blank"><i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp;api<span class="badge"></span></a> </li>
                 <li><a href="./raw.html" target="_blank"><i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp;raw<span class="badge"></span></a> </li>
                 <li><a href="./api/reset" target="_blank"><i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp;reset<span class="badge"></span></a> </li>
                 <div ng-show="isLoading" class="pull-right spinner"><img src="./images/spinner.gif" alt="loading"></div>
             </ul>-->
-        </div>
+    </div>
     </div>
     <!--footer-->
     <hr />
