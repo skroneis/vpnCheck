@@ -7,7 +7,7 @@ var gpioStone = new GpioStone();
 var vpnChecker = require('./vpnChecker');
 var stoneHelper = require('./stoneHelper');
 var config = require('./config');
-var delay = config.interval; //2000 == 2 secondy
+var delay = config.interval; //2000 == 2 seconds
 
 var actuals = {connections: [], raw: []};
 var http = require("./website");
