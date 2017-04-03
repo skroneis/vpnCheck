@@ -89,7 +89,7 @@ sub{
 
 .loadingDiv{
     display: inline-block;    
-    margin-left: 10px;
+    margin-left: 20px;
     /*padding-top: 10px;*/
 }
 
@@ -97,6 +97,13 @@ sub{
   .smallTableFont{
     font-size: 9px;
   }
+}
+
+.loadingIndicatorDiv{
+  background-image: url(../images/smallloading.gif);
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 10px;
 }
 
 /********************************************************************************/

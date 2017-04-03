@@ -14,7 +14,7 @@ mainModule.controller("stoneController", function ($scope, viewModelHelper, $htt
 
     $scope.getValues = function () {
         //alert("getInfos");
-         console.log("getInfos");
+        console.log("getInfos");
         $scope.isLoading = true;
         //$http.defaults.headers.common["RequestVerificationToken"] = $scope.token;
         // console.log("-----------------------------");
