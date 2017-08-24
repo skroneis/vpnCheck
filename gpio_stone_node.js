@@ -6,7 +6,7 @@ exports = module.exports = GPIOStone;
 var self = null;
 
 function GPIOStone() {
-    console.log("constructor - GPIOStoneWP");
+    console.log("constructor - GPIOStoneNODE");
     self = this;
     this.LED_GREEN = 11;
     wpi.pinMode(sanitizePinNumberWiringPi(11), wpi.OUTPUT);
@@ -34,9 +34,9 @@ GPIOStone.prototype.flash = function (pin) {
 };
 
 GPIOStone.prototype.read = function (pin, callback) {
-    console.log("read: ....: " + pin);
+    console.log("read PIN: ....: " + pin);
     pin = sanitizePinNumberWiringPi(parseInt(pin));
-    console.log("read: ....: " + pin);
+    console.log("read sanitized PIN: ....: " + pin);
     var val = wpi.digitalRead(pin);
     console.log("val: ....: " + val);
     (callback || noop)(null, parseInt(val, 10));

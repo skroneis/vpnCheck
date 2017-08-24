@@ -24,6 +24,8 @@
     "dateformat": "^2.0.0",
     "express": "^4.14.1",
     "node-schedule": "^1.2.0",
-    "wiring-pi": "^2.2.1"
+    "node-wiring-pi": "0.0.3",
+    "wiring-pi": "^2.2.1",
+    "wiringpi-node": "^2.4.4"
   }
 }
