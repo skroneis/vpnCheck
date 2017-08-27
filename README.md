@@ -21,3 +21,6 @@ module.exports={
     'interval': 2000
 };
 ```
+
+### wiring-pi
+use node-wiring-pi
