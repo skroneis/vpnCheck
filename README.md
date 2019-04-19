@@ -1,6 +1,8 @@
 # vpnCheck
 
 ## install as service with forever
+sudo apt-get install rcconf
+sudo npm install forever-service -g
 sudo npm install forever -g
 
 sudo forever-service install vpncheck --script index.js -p $(dirname "$(which forever)")
